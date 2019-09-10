@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Cadastro Garçom</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="form">
+        <ion-list>
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="floating">Nome</ion-label>
+                <ion-input formControlName="nome" placeholder="seunome@exemplo.com"></ion-input>
+            </ion-item>
+            
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="floating">E-mail</ion-label>
+                <ion-input formControlName="email" placeholder="seunome@exemplo.com"></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="floating">Senha</ion-label>
+                <ion-input formControlName="senha" placeholder="seunome@exemplo.com"></ion-input>
+            </ion-item>
+            <ion-item class="ion-margin-bottom">
+                <ion-label position="floating">Confirmar senha</ion-label>
+                <ion-input type="password" formControlName="confirme" placeholder="seunome@exemplo.com"></ion-input>
+            </ion-item>
+        </ion-list>
+        <ion-button fill="solid" expand="block" color="primary">Cadastrar</ion-button>
+    </form>
+</ion-content>

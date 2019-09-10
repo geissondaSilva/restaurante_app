@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="form" class="content">
+        <div class="flex">
+            <ion-list>
+                <ion-item class="ion-margin-bottom">
+                    <ion-label position="floating">E-mail</ion-label>
+                    <ion-input type="email" inputmode="email" formControlName="email" placeholder="seunome@exemplo.com" required></ion-input>
+                </ion-item>
+                <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="input-error">Campo obrigatório</div>
+                
+                <ion-item class="ion-margin-bottom">
+                    <ion-label position="floating">Senha</ion-label>
+                    <ion-input type="password" formControlName="senha" inputmode="password" placeholder="Informe sua senha" required></ion-input>
+                </ion-item>
+                <div *ngIf="form.controls['senha'].invalid && form.controls['senha'].touched" class="input-error">Campo obrigatório</div>
+            </ion-list>
+        </div>
+        <div class="ion-padding btns">
+            <ion-button expand="block" (click)="entrar()" fill="solid" color="primary">Entrar</ion-button>
+            <ion-button expand="block" (click)="cadastrar()" fill="solid" color="secondary">Cadastrar</ion-button>
+        </div>
+    </form>
+</ion-content> 
