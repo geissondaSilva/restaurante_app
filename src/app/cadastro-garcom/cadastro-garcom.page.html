@@ -12,26 +12,36 @@
         <div class="inputs">
             <ion-list>
                 <ion-item class="ion-margin-bottom">
-                    <ion-label position="floating">Nome</ion-label>
-                    <ion-input formControlName="nome" placeholder="seunome@exemplo.com"></ion-input>
+                    <ion-label position="floating">Nome*</ion-label>
+                    <ion-input formControlName="nome" placeholder="Digite seu nome" required></ion-input>
                 </ion-item>
+                <div *ngIf="form.controls['nome'].invalid && form.controls['nome'].touched" class="input-error">Campo
+                    obrigatório</div>
 
                 <ion-item class="ion-margin-bottom">
-                    <ion-label position="floating">E-mail</ion-label>
-                    <ion-input formControlName="email" placeholder="seunome@exemplo.com"></ion-input>
+                    <ion-label position="floating">E-mail*</ion-label>
+                    <ion-input type="email" inputmode="email" email formControlName="email" placeholder="seunome@exemplo.com" required></ion-input>
                 </ion-item>
+                <div *ngIf="form.controls['email'].invalid && form.controls['email'].touched" class="input-error">Campo
+                    obrigatório</div>
+
                 <ion-item class="ion-margin-bottom">
-                    <ion-label position="floating">Senha</ion-label>
-                    <ion-input formControlName="senha" placeholder="seunome@exemplo.com"></ion-input>
+                    <ion-label position="floating">Senha*</ion-label>
+                    <ion-input type="password" formControlName="senha" (blur)="validarSenha()" placeholder="Digite sua senha" required></ion-input>
                 </ion-item>
+                <div *ngIf="form.controls['senha'].invalid && form.controls['senha'].touched" class="input-error">Campo
+                    obrigatório</div>
+
                 <ion-item class="ion-margin-bottom">
                     <ion-label position="floating">Confirmar senha</ion-label>
-                    <ion-input type="password" formControlName="confirme" placeholder="seunome@exemplo.com"></ion-input>
+                    <ion-input type="password" (blur)="validarSenha()" formControlName="confirme" placeholder="Confirme a sua senha"></ion-input>
                 </ion-item>
+                <div *ngIf="form.controls['confirme'].invalid && form.controls['confirme'].touched" class="input-error">Senhas não conferem</div>
+
             </ion-list>
         </div>
         <div class="ion-padding">
-            <ion-button fill="solid" expand="block" color="primary">Cadastrar</ion-button>
+            <ion-button fill="solid" (click)="cadastrar()" expand="block" color="primary">Cadastrar</ion-button>
         </div>
     </form>
 </ion-content>
