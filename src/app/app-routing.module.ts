@@ -10,7 +10,8 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'cadastro-garcom', loadChildren: './cadastro-garcom/cadastro-garcom.module#CadastroGarcomPageModule' }
+  { path: 'cadastro-garcom', loadChildren: './cadastro-garcom/cadastro-garcom.module#CadastroGarcomPageModule' },
+  { path: 'tab4', loadChildren: './tab4/tab4.module#Tab4PageModule' }
 ];
 @NgModule({
   imports: [

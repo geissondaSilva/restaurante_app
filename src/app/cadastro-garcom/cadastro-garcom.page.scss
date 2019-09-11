@@ -1,0 +1,9 @@
+form{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs{
+    flex-grow: 1;
+}

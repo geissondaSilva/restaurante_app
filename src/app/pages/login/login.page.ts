@@ -30,7 +30,8 @@ export class LoginPage implements OnInit {
         }
 
         this.service.login(this.form.value).subscribe(res => {
-            console.log(res)
+            localStorage.setItem('token', res.data.token)
+            this.router.navigateByUrl('home');
         }, error => {
             console.log(error)
         })
